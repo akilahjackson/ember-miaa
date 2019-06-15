@@ -1,0 +1,27 @@
+
+
+<h2>Posts</h2>
+
+
+  <div class="row">
+	{{#each model as |post|}}
+
+  <div class="card d-flex d-md-flex {{htmlfix post.slug}}">
+    <div class="card-body">
+      <h5 class="card-title">{{htmlfix post.title}}</h5>
+      <p class="card-text">{{htmlfix post.excerpt}}</p>
+      <a href="#" class="btn btn-primary">Read It</a>
+    </div>
+  </div>
+
+	{{/each}}
+</div>
+
+<div class="{{htmlfix post.slug}} post-content">
+
+  {{post.content}}
+
+</div>
+
+
+{{outlet}}
