@@ -6,22 +6,28 @@
   <div class="row">
 	{{#each model as |post|}}
 
-  <div class="card d-flex d-md-flex {{htmlfix post.slug}}">
+  <div class="card col-md-3 {{htmlfix post.slug}} clearfix">
     <div class="card-body">
       <h5 class="card-title">{{htmlfix post.title}}</h5>
-      <p class="card-text">{{htmlfix post.excerpt}}</p>
-      <a href="#" class="btn btn-primary">Read It</a>
+      <span class="card-text">{{htmlfix post.excerpt}}</span>
+      <a href="#postContent{{post.id}}" class="btn btn-primary" data-toggle="collapse" data-target="#postContent{{post.id}}">Read It</a>
     </div>
   </div>
+
+  <div class="collapse card col-md-9 shadow-lg fade {{htmlfix post.slug}} post-content clearfix" aria-expanded="false"  id="postContent{{post.id}}">
+    <div class=" card-body">
+      <h5 class="card-title">{{htmlfix post.title}}</h5>
+      <span class="card-text">{{htmlfix post.content}}</span>
+    </div>
+  </div>
+
+
 
 	{{/each}}
 </div>
 
-<div class="{{htmlfix post.slug}} post-content">
 
-  {{post.content}}
 
-</div>
 
 
 {{outlet}}
