@@ -1,13 +1,28 @@
 
-<div class="row">
-  <div class="col-md-12">
-  <h1 class="display-1 d-flex justify-content-center"> MIAA FOREVER ! </h1>
+<div id="fullpage">
 
-  {{#link-to "posts"}}
-  <button class="btn btn-primary btn-lg"> posts </button>
-  {{/link-to}}
+{{#each model as |page|}}
+
+
+<!-- <div class="d-flex flex-row" style="background:{{htmlfix page.acf.page_background_color}};" > -->
+<div class="section" style="background:{{htmlfix page.acf.page_background_color}};">
+
+    <div class="slide" data-anchor="{{htmlfix page.slug}}">
+        <div class="jumbotron bg-white shadow" id="card_{{htmlfix page.slug}}">
+          <div class= "d-flex justify-content-center">
+            <button class="btn btn-lg" type="button" data-toggle="collapse" data-target="#{{htmlfix page.slug}} "role="button" aria-expanded="false" aria-controls="{{htmlfix page.slug}}">
+              <h1 class="display-1">{{htmlfix page.title}}</h1>
+            </button>
+
+          </div>
+            <span class="lead collapse fade" id="{{htmlfix page.slug}}">{{htmlfix page.content}}</span>
+        </div>
+    </div>
+</div>
+
+
+
+{{/each}}
 
 {{outlet}}
-
-  </div>
 </div>
