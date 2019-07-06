@@ -9,7 +9,18 @@ module.exports = function(defaults) {
      //Default list
      js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab', 'toast']
    }
+
   });
+
+app.import('node_modules/fullpage.js/dist/fullpage.css');
+app.import('node_modules/fullpage.js/dist/fullpage.extensions.min.js');
+app.import('node_modules/fullpage.js/dist/fullpage.js');
+app.import('node_modules/fullpage.js/dist/fullpage.min.js.map', {destDir:'assets'});
+app.import('node_modules/fullpage.js/dist/fullpage.min.js');
+app.import('node_modules/fullpage.js/dist/fullpage.min.css');
+app.import('node_modules/fullpage.js/dist/fullpage.css.map',{destDir:'assets'});
+
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -23,7 +34,6 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
-
 
   return app.toTree();
 };
