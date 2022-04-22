@@ -52,7 +52,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "fullpage.js": "^3.0.5",
+    "fullpage.js": "^4.0.5",
     "popper": "^1.0.1"
   }
 }
